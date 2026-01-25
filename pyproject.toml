@@ -1,0 +1,49 @@
+[tool.poetry]
+name = "valutatrade-hub"
+version = "1.0.0"
+description = "ValutaTrade Hub - это консольное приложение для симуляции торговли валютами с отдельным Parser Service и хранением в JSON."
+authors = ["Anna Razumeyko <karasiklife@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "valutatrade_hub" }]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+prettytable = "3.10.0"
+requests = "2.32.3"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "0.6.9"
+
+[tool.poetry.scripts]
+project = "main:main"
+
+[tool.valutatrade]
+DATA_DIR = "data"
+USERS_PATH = "data/users.json"
+PORTFOLIOS_PATH = "data/portfolios.json"
+RATES_PATH = "data/rates.json"
+EXCHANGE_RATES_PATH = "data/exchange_rates.json"
+SESSION_PATH = "data/.session.json"
+RATES_TTL_SECONDS = 3600
+DEFAULT_BASE_CURRENCY = "USD"
+LOG_DIR = "logs"
+LOG_FILE = "logs/actions.log"
+LOG_LEVEL = "INFO"
+LOG_MAX_BYTES = 1048576
+LOG_BACKUP_COUNT = 3
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = []
+fixable = ["ALL"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["valutatrade_hub"]
+
+[build-system]
+requires = ["poetry-core==1.9.0"]
+build-backend = "poetry.core.masonry.api"
