@@ -30,4 +30,8 @@ Thumbs.db
 *.temp
 *.bak
 
+data/users.json
+data/portfolios.json
+data/rates.json
+data/exchange_rates.json
 data/.session.json
