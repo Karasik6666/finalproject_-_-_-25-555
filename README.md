@@ -185,4 +185,6 @@ poetry run project update-rates
 Логи приложения записываются в каталог `logs/`.
 Там фиксируются операции (buy/sell и другие действия), статус OK/ERROR и детали ошибки при исключениях.
 
+## Демо (asciinema)
 
+[![asciinema demo](https://asciinema.org/a/gKPFdattrS3XSynG.svg)](https://asciinema.org/a/gKPFdattrS3XSynG)
