@@ -29,7 +29,7 @@ class FiatCurrency(Currency):
     issuing_country: str
 
     def __post_init__(self) -> None:
-        super().__post_init__()
+        Currency.__post_init__(self)
         if (
             not isinstance(self.issuing_country, str)
             or not self.issuing_country.strip()
@@ -47,7 +47,7 @@ class CryptoCurrency(Currency):
     market_cap: float
 
     def __post_init__(self) -> None:
-        super().__post_init__()
+        Currency.__post_init__(self)
         if not isinstance(self.algorithm, str) or not self.algorithm.strip():
             raise ValidationError("algorithm не должен быть пустым")
         if not isinstance(self.market_cap, (int, float)) or self.market_cap <= 0:   # noqa: UP038
